@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Formulario</title>
+	
+	<style>
+		form div{
+			margin-bottom: 1em;
+		}
+	</style>
+</head>
+<body>
+	<!-- Los formularios deben encerrarse dentro de la etiqueta form action = "" -->
+
+	<!-- En el atributo action se indica el archivo que recepcionara los datos que serán enviados desde el archivo de origen -->
+	
+	<!-- Formas de enviar un formulario:
+		1. <input type="submit">
+		2. <button>Enviar</button>
+		3. Presionar Enter dentro del input
+
+	Googlear desde una caja!
+	<form action="http://google.com/search" method="get">
+		<input type="text" name="q">
+		<button>Enviar</button>
+	</form>
+	-->
+	<form action="procesar.html">
+		<!-- #No Usar <p> para saltos de linea
+		Para los saltos de linea entre etiquetas usar Div porque ocupan menos espacio entre el input y el label
+		<p>
+			<label for="nombre">Nombre</label>
+		</p>
+		-->
+		<!-- Recomendable usar div como contenedor de labels para los datos de linea -->
+		<div>
+			<label for="nombre">Nombre</label>
+		</div>
+		<input type="text" id="nombre">
+
+		<div>
+			<input type="checkbox" id="checkbox1">
+			<label for="checkbox1">Opcion 1</label>
+			<br>
+			<input type="checkbox" id="checkbox2">
+			<label for="checkbox2">Opcion 2</label>
+			<br>
+			<input type="checkbox" id="checkbox3">
+			<label for="checkbox3">Opcion 3</label>
+		</div>
+		<div>
+			<input type="radio" id="radio1" name="radio">
+			<label for="radio1">Opcion 1</label>
+			<br>
+			<input type="radio" id="radio2" name="radio">
+			<label for="radio2">Opcion 2</label>
+			<br>
+			<input type="radio" id="radio3" name="radio">
+			<label for="radio3">Opcion 3</label>
+		</div>
+		<!-- el atributo name="" no hace nada en html, salvo especificar una area de accion para los input type="radio" -->
+
+		<div>
+			<label for="mensaje">Deje su mensaje</label><br>
+				<textarea name="mensaje" id="mensaje" cols="50" rows="5"></textarea>
+		</div>
+
+		<div>
+			<!-- El atributo value sera usado por el servidor cuando se envien los datos -->
+		
+			<!-- La etiqueta <option value=""></option> es la que muestra el navegador y no necesariamente debe coincidir con el atributo value="" -->
+
+		<label for="edad">Seleccione su Edad</label>
+			<!-- La etiqueta <select name="" id=""></select> muestra una lista desplegable -->
+			<select name="edad" id="edad">
+				<optgroup label="Niños y Jóvenes"> <!-- atributo label -->
+					<option value="0">Menos de 10 años</option>
+					<option value="1">De 10 a 20 años</option>
+				</optgroup>
+
+				<optgroup label="Adultos"> <!-- atributo label -->
+					<option value="2">De 21 a 30  años</option>
+					<option value="3">De 31 a 40 años</option>
+				</optgroup>
+
+				<optgroup label="Adultos Mayores"> <!-- atributo label -->
+					<option value="2">De 41 a 50  años</option>
+					<option value="3">De mas de 50  años</option>
+				</optgroup>
+			</select>
+		</div>
+		
+		<!-- Podemos agrupar las opciones de un select mediante la etiqueta <optgroup></optgroup>-->
+
+		<div>
+			<input type="submit" value="Enviar Formulario">
+		</div>
+
+	</form>
+</body>
+</html>
